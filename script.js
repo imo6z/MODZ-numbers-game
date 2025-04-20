@@ -1,4 +1,3 @@
-
 let secretCode = ['5','0','5','0'];
 let gameOver = false;
 let memoryMode = false;
@@ -129,9 +128,10 @@ function checkRow(row) {
   if (allCorrect) {
     gameOver = true;
     setTimeout(() => {
-      showMessage("🎉 تهانينا! لقد خمّنت الرقم بشكل صحيح!");
       playSound("win");
-    }, 300);
+      document.getElementById("message-box").classList.add("hidden"); // يخفي أي رسالة مفتوحة
+      document.getElementById("win-screen").classList.remove("hidden"); // يظهر شاشة الفوز
+    }, 400);
   } else {
     setTimeout(createRow, 500);
   }
@@ -140,6 +140,7 @@ function checkRow(row) {
 function resetGame() {
   gameOver = false;
   gameContainer.innerHTML = "";
+  document.getElementById("win-screen")?.classList.add("hidden"); // يخفي شاشة الفوز إذا كانت ظاهرة
   createRow();
 }
 
