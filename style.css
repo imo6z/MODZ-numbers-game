@@ -1,12 +1,21 @@
 /* خلفية ناعمة ومريحة */
+/* خلفية متدرجة متحركة وناعمة */
 body {
   font-family: 'Cairo', sans-serif !important;
-  background: radial-gradient(circle at top left, #1a1c2e, #17172c, #141427);
+  background: linear-gradient(-45deg, #141427, #1a1c2e, #17172c, #2b2d4b);
+  background-size: 400% 400%;
+  animation: gradientFlow 20s ease infinite;
   color: white;
   text-align: center;
   padding-top: 40px;
   margin: 0;
   overflow-x: hidden;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 h1 {
