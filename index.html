@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تخمين الرقم - نسخة ووردلي</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+</head>
+<body>
+  <img src="MODZ2.png" alt="لوقو القناة" id="logo">
+  <h1>لعبة تخمين الرقم</h1>
+  <div id="game-container"></div>
+
+  <div id="controls">
+    <input type="text" id="secret-input" maxlength="4" placeholder="ادخل الكود (للمقدم)">
+    <button onclick="setSecret()">تعيين الكود</button>
+    <button onclick="generateRandomCode()">كود عشوائي</button>
+    <button onclick="resetGame()">إعادة</button>
+    <button onclick="toggleMode()">النمط: <span id="mode-label">عادي</span></button>
+  </div>
+
+  <div id="message-box" class="hidden">
+    <span id="message-text"></span>
+    <button onclick="closeMessage()">✖</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
